@@ -29,6 +29,10 @@ label {
   font-family: 'Bungee', cursive;
 }
 
+.over {
+  color: red;
+}
+
 .output {
   align-self: right;
   font-weight: bold;
