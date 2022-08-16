@@ -1,0 +1,28 @@
+container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 0 auto;
+  align-content: flex-start;
+}
+
+.textarea {
+  border-bottom: 4px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.button {
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.output {
+  align-self: right;
+  font-weight: bold;
+}

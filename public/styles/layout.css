@@ -29,11 +29,6 @@ body {
   font-family: 'Bungee', cursive;
 }
 
-.container {
-  width: 90%;
-  text-align: center;
-  /* align-self: center; */
-}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
