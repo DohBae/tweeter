@@ -5,7 +5,7 @@ container {
   justify-content: flex-start;
   width: 90%;
   margin: 0 auto;
-  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .textarea {
