@@ -1,5 +1,5 @@
 "use strict";
-
+// generates random numbers or strings to make testing lesss monotonous 
 const Chance      = require("chance"),
       chance      = new Chance();
 

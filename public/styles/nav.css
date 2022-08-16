@@ -1,0 +1,15 @@
+.writeNewTweet {
+  float: right;
+}
+
+.downArrow {
+  float: right;
+}
+
+.navBarHome {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
