@@ -1,4 +1,4 @@
-container {
+.container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -9,17 +9,24 @@ container {
 }
 
 .textarea {
-  border-bottom: 4px;
+  width: 90%;
+  border-bottom: 20px;
 }
 
-.label {
+label {
   font-weight: bold;
 }
 
-.button {
+.tweetButton {
   font-family: 'Bungee', cursive;
   background-color: #4056A1;
   color: #FFFFFF;
+}
+
+.counter {
+  font-weight: bold;
+  align-self: flex-end;
+  font-family: 'Bungee', cursive;
 }
 
 .output {
