@@ -1,6 +1,7 @@
 .tweetsHomePage {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   border-style: groove;
   box-shadow: 0px 3px 8px #545149;
@@ -12,6 +13,7 @@
 
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
@@ -19,6 +21,7 @@ header {
 
 header > div {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -28,6 +31,7 @@ header > div {
 
 footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
@@ -35,6 +39,7 @@ footer {
 }
 
 footer > div {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   margin: 10px;
