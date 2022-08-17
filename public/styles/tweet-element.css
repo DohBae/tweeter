@@ -1,4 +1,4 @@
-article {
+.tweetsHomePage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +10,9 @@ article {
 .tweetHeader {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: space-around;
-  width: 90%;
+  width: 100%;
   padding: 100px;
 }
 
@@ -20,4 +20,4 @@ article {
   display: flex;
   justify-content: space-between;
   border-top: groove;
-}
+}  

@@ -5,17 +5,28 @@
   justify-content: flex-start;
   width: 90%;
   margin: 0 auto;
-  align-items: flex-start;
+  align-items: space-between;
 }
 
-.textarea {
-  width: 90%;
-  border-bottom: 20px;
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between
 }
 
-label {
+form > label {
   font-weight: bold;
-  border-bottom: 20px;
+}
+
+#tweet-text {
+  width: 100%;
+  border: 0px;
+  border-bottom: 100px;
+}
+
+form > .div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweetButton {
@@ -30,11 +41,6 @@ label {
   font-family: 'Bungee', cursive;
   /* $("#characterCount").css(color: red); */
 }
-
-#characterCounter .over {
-  color: red;
-}
-
 
 .output {
   align-self: right;
