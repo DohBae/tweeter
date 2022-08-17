@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-element.css" type="text/css" />
     
     <link href ="<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,15 +48,15 @@
   </header>
     
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form>
+    <main>
+      <section>
+        <form class="newTweet">
+          <h2>Compose Tweet</h2>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+            <div class="tweetButtonCharCount">
             <button type="submit" class="tweetButton">Tweet</button>
-            <output name="counter" for="tweet-text" class="counter" id="characterCount">140</output>
+            <output name="counter" for="tweet-text" id="characterCount">140</output>
           </div>
         </form>
         <article class="tweetsHomePage">
@@ -67,7 +68,7 @@
           <p>Did you ever hear the tragedy of darth plagueis the wise?</p>
             <footer class="tweetFooter">
               <span>1 day ago</span>>
-              <span class="flag"><i class="fa-solid fa-flag"></i></span>>
+              <span class="flag"></span><i class="fa-solid fa-flag"></i></span>>
               <span class="retweet"><i class="fa-solid fa-retweet"></i></span>
               <span class="heart"><i class="fa-solid fa-heart"></i></span>
             </footer>

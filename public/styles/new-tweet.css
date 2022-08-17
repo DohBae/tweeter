@@ -1,48 +1,41 @@
-.container {
+.newTweet {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 90%;
-  margin: 0 auto;
+  margin: 2 2;
   align-items: space-between;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-content: space-between
-}
-
-form > label {
+.newTweet > label {
   font-weight: bold;
 }
 
 #tweet-text {
   width: 100%;
-  border: 0px;
-  border-bottom: 100px;
+  border-bottom: 4px solid #545149;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #545149;
+  background-color: #f4f1ec
 }
 
-form > .div {
+.tweetButtonCharCount {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .tweetButton {
   font-family: 'Bungee', cursive;
   background-color: #4056A1;
   color: #FFFFFF;
+  margin: 15px;
+  width: 100px;
 }
 
-.counter {
-  font-weight: bold;
-  align-self: flex-end;
-  font-family: 'Bungee', cursive;
-  /* $("#characterCount").css(color: red); */
-}
-
-.output {
-  align-self: right;
+#characterCount {
   font-weight: bold;
 }

@@ -1,6 +1,6 @@
 .tweetsHomePage {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
   border-style: groove;
@@ -10,7 +10,7 @@
 .tweetHeader {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: space-around;
   width: 100%;
   padding: 100px;
