@@ -1,12 +1,16 @@
-.writeNewTweet {
-  float: right;
+.navBarHome > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .downArrow {
-  float: right;
+  margin: 0;
 }
 
 .navBarHome {
+  display: flex;
+  justify-content: space-between;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
