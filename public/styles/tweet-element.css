@@ -3,7 +3,11 @@
   flex-direction: column;
   width: 100%;
   border-style: groove;
-  box-shadow: 0px 3px 3px #545149;
+  box-shadow: 0px 3px 8px #545149;
+}
+
+.tweetsHomePage:hover {
+  box-shadow: 0px 10px 30px
 }
 
 header {
@@ -35,5 +39,3 @@ footer > div {
   align-items: center;
   margin: 10px;
 }  
-
-/* *{border: 1px solid black} */
