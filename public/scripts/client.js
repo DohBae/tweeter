@@ -61,7 +61,7 @@ $(document).ready(function() {
   renderTweets(data);
 
 
-  const $tweetTextArea = $('form');
+  const $tweetTextArea = $('.newTweet');
 
   $tweetTextArea.submit((event) => {
     event.preventDefault();
@@ -71,7 +71,9 @@ $(document).ready(function() {
       type: "POST",
       url: "http://localhost:8080/",
       data: data,
-      // success: success,
+      success: (response) => {
+        $("#tweet-text").append(response);
+      }
     });
   })
 });
