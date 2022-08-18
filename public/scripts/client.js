@@ -19,7 +19,7 @@ $(document).ready(function() {
     </header>
     <p class="tweetContent">${tweetObject.content.text}</p>
     <footer>
-    <span>${timeago.format(new Date (tweetObject.created_at))}</span> 
+    <span>${timeago.format(new Date(tweetObject.created_at))}</span> 
     <div>
     <span class="flag"><i class="fa-solid fa-flag"></i></span>
     <span class="retweet"><i class="fa-solid fa-retweet"></i></span>
@@ -53,30 +53,29 @@ $(document).ready(function() {
 
   // alert error function
   const errorAlert = function(errorMessage) {
-    let message = "Error: " + errorMessage
+    let message = "Error: " + errorMessage;
     alert(message);
     return true;
-    
-  }
+  };
     // User tweets being sent to server after clicking submit button
-    const $tweetForm = $('.newTweet');
+  const $tweetForm = $('.newTweet');
     
-    $tweetForm.on("submit", ((event) => {
-      event.preventDefault();
-      let tweetTextArea = $("#tweet-text")
+  $tweetForm.on("submit", ((event) => {
+    event.preventDefault();
+    let tweetTextArea = $("#tweet-text");
     if (tweetTextArea.val().length > 140) {
-      errorAlert( "too many characters");
+      errorAlert("too many characters");
     } else if (tweetTextArea.val().length === 0) {
-      errorAlert("please enter text in the text field")
+      errorAlert("please enter text in the text field");
     }
-      let data = $('form').serialize();
-      $.ajax({
-        type: "POST",
-        url: "/tweets",
-        data: data,
-        success: (response) => {
-          loadTweets();
-        }
-      });
+    let data = $('form').serialize();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: data,
+      success: (response) => {
+        loadTweets();
+      }
+    });
   }));
 });
