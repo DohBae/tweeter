@@ -8,6 +8,7 @@ $(document).ready(function() {
   
   // format for how tweets need to be displayed
   const createTweetElement = function(tweetObject) {
+
     let $tweet = $(`<br><article class="tweetsHomePage">
     <header>
     <div>
@@ -18,7 +19,7 @@ $(document).ready(function() {
     </header>
     <p class="tweetContent">${tweetObject.content.text}</p>
     <footer>
-    <span>${tweetObject.created_at}</span>
+    <span>${timeago.format(new Date (tweetObject.created_at))}</span> 
     <div>
     <span class="flag"><i class="fa-solid fa-flag"></i></span>
     <span class="retweet"><i class="fa-solid fa-retweet"></i></span>
@@ -50,19 +51,36 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  // User tweets being sent to server after clicking submit button
-  const $tweetTextArea = $('.newTweet');
-
-  $tweetTextArea.submit((event) => {
-    event.preventDefault();
-    let data = $('form').serialize();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: data,
-      success: (response) => {
-        loadTweets();
-      }
-    });
-  });
+  // alert error function
+  const errorAlert = function(errorMessage) {
+    let message = "Error: " + errorMessage
+    alert(message);
+    return true;
+    
+  }
+    // User tweets being sent to server after clicking submit button
+    const $tweetForm = $('.newTweet');
+    
+    
+    $tweetForm.on("submit", ((event) => {
+      event.preventDefault();
+      let tweetTextArea = $("#tweet-text")
+      console.log("TweetText: ")
+      console.log(tweetTextArea.val())
+      // getting tweet text, validating 
+    if (tweetTextArea.val().length > 140) {
+      errorAlert( "too many characters");
+    } else if (tweetTextArea.val().length === 0) {
+      errorAlert("please enter text in the text field")
+    }
+      let data = $('form').serialize();
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: data,
+        success: (response) => {
+          loadTweets();
+        }
+      });
+  }));
 });
