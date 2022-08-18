@@ -5,32 +5,8 @@
 */
 
 $(document).ready(function() {
-  // driver code
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ];
   
+  // format for how tweets need to be displayed
   const createTweetElement = function(tweetObject) {
     let $tweet = $(`<br><article class="tweetsHomePage">
     <header>
@@ -53,6 +29,7 @@ $(document).ready(function() {
     return $tweet;
   };
   
+  // Adds new tweet to the tweeter homepage. Newest tweets displayed on top
   const renderTweets = function(tweetArray) {
     for (const tweet of tweetArray) {
       const newTweet = createTweetElement(tweet);
@@ -60,31 +37,20 @@ $(document).ready(function() {
     }
   };
 
+  // Getting submitted tweets fromm server
   const loadTweets = function() {
-    const $submitButton = $(".tweetButton");
-    
-    // $submitButton.on('submit', function() {
-      // console.log("form submitted");
-      $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/tweets/",
-        dataType: "json",
-        success: (response) => {
-          renderTweets(response);
-          // $("#tweets-container").append(response);
-          }
-        // })
-    // })
-    // $.ajax("/tweets", {method: "GET"})
-    // .then(function(userTweets) {
-    //   console.log(userTweets)
-    //   $("#tweet-text").append(response);
-      
-    })
-  }
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:8080/tweets/",
+      dataType: "json",
+      success: (response) => {
+        renderTweets(response);
+      }
+    });
+  };
   loadTweets();
 
-
+  // User tweets being sent to server after clicking submit button
   const $tweetTextArea = $('.newTweet');
 
   $tweetTextArea.submit((event) => {
@@ -96,10 +62,7 @@ $(document).ready(function() {
       data: data,
       success: (response) => {
         loadTweets();
-        // console.log(response)
       }
     });
-  })
-  
-
+  });
 });
