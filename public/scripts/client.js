@@ -65,14 +65,14 @@ $(document).ready(function() {
 
   $tweetTextArea.submit((event) => {
     event.preventDefault();
-    let data = $('tweet-text').text($('form').serialize());
-    
+    let data = $('form').serialize();
     $.ajax({
       type: "POST",
-      url: "http://localhost:8080/",
+      url: "/tweets",
       data: data,
       success: (response) => {
-        $("#tweet-text").append(response);
+        // $("#tweet-text").append(response);
+        console.log(response)
       }
     });
   })
