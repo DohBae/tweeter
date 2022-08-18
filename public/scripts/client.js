@@ -59,4 +59,19 @@ $(document).ready(function() {
     }
   };
   renderTweets(data);
+
+
+  const $tweetTextArea = $('form');
+
+  $tweetTextArea.submit((event) => {
+    event.preventDefault();
+    let data = $('tweet-text').text($('form').serialize());
+    
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8080/",
+      data: data,
+      // success: success,
+    });
+  })
 });
