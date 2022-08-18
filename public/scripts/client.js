@@ -61,13 +61,9 @@ $(document).ready(function() {
     // User tweets being sent to server after clicking submit button
     const $tweetForm = $('.newTweet');
     
-    
     $tweetForm.on("submit", ((event) => {
       event.preventDefault();
       let tweetTextArea = $("#tweet-text")
-      console.log("TweetText: ")
-      console.log(tweetTextArea.val())
-      // getting tweet text, validating 
     if (tweetTextArea.val().length > 140) {
       errorAlert( "too many characters");
     } else if (tweetTextArea.val().length === 0) {
