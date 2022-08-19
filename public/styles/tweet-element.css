@@ -45,6 +45,18 @@ footer > div {
   margin: 10px;
 }  
 
+.flag:hover {
+  color: rgb(242, 196, 110)
+}
+
+.retweet:hover {
+  color: rgb(242, 196, 110)
+}
+
+.heart:hover {
+  color: rgb(242, 196, 110)
+}
+
 @media screen and (min-width: 821px) and (max-width: 1024px) {
   #tweets-container {
     display: inline-block;
