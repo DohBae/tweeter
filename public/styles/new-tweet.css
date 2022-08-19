@@ -39,3 +39,22 @@
 #characterCount {
   font-weight: bold;
 }
+
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+  .newTweet {
+    display: inline-block;
+    padding-left: 136px;
+    margin-left: auto;
+    margin-right: 0;
+    width: 90%;
+  }
+}
+
+/*
+@media all and (min-width: 769px) {
+  .newTweet {
+    width: 50%;
+    align-items: left;
+  }
+}
+*/
