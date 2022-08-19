@@ -19,10 +19,6 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: baseline;  */
 }
 
 .tweeter {
@@ -49,28 +45,4 @@ main {
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-/* I want app for tablet to:
-[x] be arranged in a column
-[x] have the nav bar turn the same colour as the header at 820px
-
-I want the desktop version to:'
-[x] have the nav bar turn to blue if screen is greater than 821px (go up to 1024px)
-[] header to srink to a square and align on the left side of the page
-[] header be separated from the nav bar and aligned with the tweeter feed (compose tweet and read tweet)
-[] header to take up aprox 20% of the viewport
-[] header stays fixed when scrolling through tweeter feed
-[] tweeter feed align to the right side of the page
-[] tweeter feed to take up aprox 50% of viewport
-
-*/
-
- /*
- @media all and (min-width: 769px) {
-  body {
-    display: flex;
-    flex-direction: row;
-  }
- }
  */

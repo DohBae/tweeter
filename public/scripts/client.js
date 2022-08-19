@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -57,12 +57,6 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  // alert error function
-  // const errorAlert = function(errorMessage) {
-  //   let message = "Error: " + errorMessage;
-  //   alert(message);
-  //   return true;
-  // };
     // User tweets being sent to server after clicking submit button
   const $tweetForm = $('.newTweet');
     
@@ -75,16 +69,16 @@ $(document).ready(function() {
       $("#errorMessageChar").hide().slideDown();
       $("#errorMessageChar").on("click", () => {
         $("#errorMessageChar").css({"display": "none"});
-      })
+      });
       return false;
     } else if (tweetTextArea.val().length === 0) {
       $("#errorMessageEmpty").css({"display": "flex", "justify-content": "center", "background-color": "#ffb6c1", "color": "red", "border": "solid red", "margin": "20px", "padding": "10px", "font-weight": "bold", "text-align": "center"});
-      $("#errorMessageEmpty").hide().slideDown()
+      $("#errorMessageEmpty").hide().slideDown();
       $("#errorMessageEmpty").on("click", () => {
         $("#errorMessageEmpty").css({"display": "none"});
-      })
+      });
       return false;
-    } 
+    }
     
     $("#errorMessageChar").css({"display": "none"});
     $("#errorMessageEmpty").css({"display": "none"});
@@ -97,7 +91,7 @@ $(document).ready(function() {
       success: (response) => {
         loadTweets();
         $('#tweet-text').val('');
-        $('#characterCount').val(140)
+        $('#characterCount').val(140);
       }
     });
   }));

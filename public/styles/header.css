@@ -11,7 +11,6 @@
 }
 
 .profilePicture {
-  /* margin-top: 120px; */
   align-self: center;
 }
 
@@ -51,7 +50,6 @@
 @media screen and (min-width: 821px) and (max-width: 1024px) {
   .profileName {
     margin: -31px;
-    /* padding: 0; */
     font-size: 60%;
     text-align: center;
     display: inherit-block;
@@ -65,31 +63,3 @@
     margin-top: 120px;
   }
 }
-
-/*
-@media all and (min-width: 769px) {
-  .userProfile {
-    width: 35%;
-    height: 30%;
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-  }
-}
-
-@media all and (min-width: 769) {
-  .profilePicture img {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: left;
-  }
-}
-
-@media all and (min-width: 769px) {
-  .profileName {
-    width: 100%;
-    height: 30%;
-  }
-}
-*/
