@@ -5,6 +5,12 @@
 */
 
 $(document).ready(function() {
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   
   // format for how tweets need to be displayed
   const createTweetElement = function(tweetObject) {
@@ -17,7 +23,7 @@ $(document).ready(function() {
     </div>
     <span class="handle">${tweetObject.user.handle}</span>
     </header>
-    <p class="tweetContent">${tweetObject.content.text}</p>
+    <p class="tweetContent">${escape(tweetObject.content.text)}</p>
     <footer>
     <span>${timeago.format(new Date(tweetObject.created_at))}</span> 
     <div>
@@ -52,22 +58,39 @@ $(document).ready(function() {
   loadTweets();
 
   // alert error function
-  const errorAlert = function(errorMessage) {
-    let message = "Error: " + errorMessage;
-    alert(message);
-    return true;
-  };
+  // const errorAlert = function(errorMessage) {
+  //   let message = "Error: " + errorMessage;
+  //   alert(message);
+  //   return true;
+  // };
     // User tweets being sent to server after clicking submit button
   const $tweetForm = $('.newTweet');
     
   $tweetForm.on("submit", ((event) => {
     event.preventDefault();
     let tweetTextArea = $("#tweet-text");
+
+    // document.write(<div> data-error="tldr; tweet too long" </div>)
+
     if (tweetTextArea.val().length > 140) {
-      errorAlert("too many characters");
+      $("#errorMessageChar").css({"display": "flex", "justify-content": "center", "background-color": "#ffb6c1", "color": "red", "border": "solid red", "margin": "20px", "padding": "10px", "font-weight": "bold", "text-align": "center"});
+      $("#errorMessageChar").hide().slideDown();
+      $("#errorMessageChar").on("click", () => {
+        $("#errorMessageChar").css({"display": "none"});
+      })
+      return false;
     } else if (tweetTextArea.val().length === 0) {
-      errorAlert("please enter text in the text field");
-    }
+      $("#errorMessageEmpty").css({"display": "flex", "justify-content": "center", "background-color": "#ffb6c1", "color": "red", "border": "solid red", "margin": "20px", "padding": "10px", "font-weight": "bold", "text-align": "center"});
+      $("#errorMessageEmpty").hide().slideDown()
+      $("#errorMessageEmpty").on("click", () => {
+        $("#errorMessageEmpty").css({"display": "none"});
+      })
+      return false;
+    } 
+    
+    $("#errorMessageChar").css({"display": "none"});
+    $("#errorMessageEmpty").css({"display": "none"});
+    
     let data = $('form').serialize();
     $.ajax({
       type: "POST",
@@ -77,5 +100,7 @@ $(document).ready(function() {
         loadTweets();
       }
     });
+    $(".newTweet").children("input").val("");
   }));
 });
+

@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -14,7 +16,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-element.css" type="text/css" />
     
-    <link href ="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,7 +29,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <!-- <script type="text/javascript" src="/public/index.js"></script> -->
+
   </head>
 
   <body>
@@ -52,6 +54,8 @@
     <!-- Page-specific (main) content here -->
     <main>
       <section>
+        <div id="errorMessageChar" style="display: none"><i class="fa-solid fa-circle-exclamation"></i>tldr; tweet too long. Click to try again.</div>
+        <div id="errorMessageEmpty" style="display: none"><i class="fa-solid fa-circle-exclamation"></i>Say something, anything! Click to try again.</div>
         <form class="newTweet">
           <h2>Compose Tweet</h2>
           <label for="tweet-text">What are you humming about?</label>
