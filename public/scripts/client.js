@@ -70,8 +70,6 @@ $(document).ready(function() {
     event.preventDefault();
     let tweetTextArea = $("#tweet-text");
 
-    // document.write(<div> data-error="tldr; tweet too long" </div>)
-
     if (tweetTextArea.val().length > 140) {
       $("#errorMessageChar").css({"display": "flex", "justify-content": "center", "background-color": "#ffb6c1", "color": "red", "border": "solid red", "margin": "20px", "padding": "10px", "font-weight": "bold", "text-align": "center"});
       $("#errorMessageChar").hide().slideDown();
@@ -98,9 +96,10 @@ $(document).ready(function() {
       data: data,
       success: (response) => {
         loadTweets();
+        $('#tweet-text').val('');
+        $('#characterCount').val(140)
       }
     });
-    $(".newTweet").children("input").val("");
   }));
 });
 
